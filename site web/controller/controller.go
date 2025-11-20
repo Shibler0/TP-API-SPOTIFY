@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"net/http"
 	"siteweb/structure"
 	"siteweb/utils"
@@ -9,16 +8,28 @@ import (
 
 func Home(w http.ResponseWriter, r *http.Request) {
 
+	if structure.TOKEN == "" {
+		utils.GetToken()
+		utils.GetAlbums()
+	}
+
 	data := structure.Home{
 		Damso: "../static/img/damso.jpeg",
 		Jul:   utils.GetArtistPicture(),
 	}
 
-	fmt.Println(utils.GetArtistPicture())
-
 	utils.RenderTemplate(w, "home.html", data)
 }
 
 func Damso(w http.ResponseWriter, r *http.Request) {
-	utils.RenderTemplate(w, "damso.html", nil)
+
+	utils.GetToken()
+
+	instance := utils.GetAlbums()
+
+	data := structure.AlbumsInfos{
+		Albums: instance.Albums,
+	}
+
+	utils.RenderTemplate(w, "damso.html", data)
 }

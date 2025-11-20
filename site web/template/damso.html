@@ -3,13 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{{ .Title }}</title>
+    <title>Liste de musique de damso</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
+    <main>
 
-    <p>Hello world !</p>
+        {{range .Albums}}
+
+        <div id = "album">
+            <img src= {{.ImageURL}} alt="Album cover">
+            <div id ="album-infos">
+                <p>Name : {{.Name}}</p>
+                <p>Release date : {{.Releasedate}}</p>
+                <p>Total tracks : {{.Totaltrack}}</p>
+            </div>
+        </div>
+
+        {{end}}
+
+    </main>
 
 </body>
 
