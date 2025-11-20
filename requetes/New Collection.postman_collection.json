@@ -9,8 +9,32 @@
 		{
 			"name": "DAMSO",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQD431hkWP8DaibYvlivX_9lrm_UXOb4Thv_heiNRNn6hjJS8CjDGKxHZp3jQisNral4TPU9SWMuqqm1W9aUychquvbiHlLL0la9ZygEZzKLC3-AWsDpor20zNsmC-pHwHm3zSJqt94",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"artists",
+						"2UwqpfQtNuhBwviIC0f2ie"
+					]
+				}
 			},
 			"response": []
 		},
@@ -25,64 +49,292 @@
 		{
 			"name": "GET ALBUMS",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQD431hkWP8DaibYvlivX_9lrm_UXOb4Thv_heiNRNn6hjJS8CjDGKxHZp3jQisNral4TPU9SWMuqqm1W9aUychquvbiHlLL0la9ZygEZzKLC3-AWsDpor20zNsmC-pHwHm3zSJqt94",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie/albums",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"artists",
+						"2UwqpfQtNuhBwviIC0f2ie",
+						"albums"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "BATTERIE FAIBLE",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQD431hkWP8DaibYvlivX_9lrm_UXOb4Thv_heiNRNn6hjJS8CjDGKxHZp3jQisNral4TPU9SWMuqqm1W9aUychquvbiHlLL0la9ZygEZzKLC3-AWsDpor20zNsmC-pHwHm3zSJqt94",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/albums/4beTtJKeg3ITJsiVuxkiV0/tracks?limit=5",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"albums",
+						"4beTtJKeg3ITJsiVuxkiV0",
+						"tracks"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "IMPARDONNABLE",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQD431hkWP8DaibYvlivX_9lrm_UXOb4Thv_heiNRNn6hjJS8CjDGKxHZp3jQisNral4TPU9SWMuqqm1W9aUychquvbiHlLL0la9ZygEZzKLC3-AWsDpor20zNsmC-pHwHm3zSJqt94",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/tracks/11dFghVXANMlKmJXsNCbNl",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tracks",
+						"11dFghVXANMlKmJXsNCbNl"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "LAYLOW",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQD431hkWP8DaibYvlivX_9lrm_UXOb4Thv_heiNRNn6hjJS8CjDGKxHZp3jQisNral4TPU9SWMuqqm1W9aUychquvbiHlLL0la9ZygEZzKLC3-AWsDpor20zNsmC-pHwHm3zSJqt94",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/artists/0LnhY2fzptb0QEs5Q5gM7S/top-tracks",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"artists",
+						"0LnhY2fzptb0QEs5Q5gM7S",
+						"top-tracks"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "MALADRESSE",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQD431hkWP8DaibYvlivX_9lrm_UXOb4Thv_heiNRNn6hjJS8CjDGKxHZp3jQisNral4TPU9SWMuqqm1W9aUychquvbiHlLL0la9ZygEZzKLC3-AWsDpor20zNsmC-pHwHm3zSJqt94",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/tracks/67Pf31pl0PfjBfUmvYNDCL",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tracks",
+						"67Pf31pl0PfjBfUmvYNDCL"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "HUGO DECRYPTE",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQD431hkWP8DaibYvlivX_9lrm_UXOb4Thv_heiNRNn6hjJS8CjDGKxHZp3jQisNral4TPU9SWMuqqm1W9aUychquvbiHlLL0la9ZygEZzKLC3-AWsDpor20zNsmC-pHwHm3zSJqt94",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/search?q=Les+actus+du+jour+-+Hugo+d%C3%A9crypte&type=show",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Les+actus+du+jour+-+Hugo+d%C3%A9crypte"
+						},
+						{
+							"key": "type",
+							"value": "show"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "HUGO LAST EP",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQD431hkWP8DaibYvlivX_9lrm_UXOb4Thv_heiNRNn6hjJS8CjDGKxHZp3jQisNral4TPU9SWMuqqm1W9aUychquvbiHlLL0la9ZygEZzKLC3-AWsDpor20zNsmC-pHwHm3zSJqt94",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/shows/6y1PloEyNsCNJH9vHias4T/episodes?limit=3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shows",
+						"6y1PloEyNsCNJH9vHias4T",
+						"episodes"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "HUGO EP 2",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQD431hkWP8DaibYvlivX_9lrm_UXOb4Thv_heiNRNn6hjJS8CjDGKxHZp3jQisNral4TPU9SWMuqqm1W9aUychquvbiHlLL0la9ZygEZzKLC3-AWsDpor20zNsmC-pHwHm3zSJqt94",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/shows/6y1PloEyNsCNJH9vHias4T/episodes?limit=1&offset=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shows",
+						"6y1PloEyNsCNJH9vHias4T",
+						"episodes"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						}
+					]
+				}
 			},
 			"response": []
 		}
