@@ -11,6 +11,7 @@ func New() *http.ServeMux {
 
 	// On associe les chemins URL à des fonctions spécifiques du controller
 	mux.HandleFunc("/home", controller.Home)
+	mux.HandleFunc("/album/damso", controller.Damso)
 
 	//gere le css
 	fileServer := http.FileServer(http.Dir("static"))
