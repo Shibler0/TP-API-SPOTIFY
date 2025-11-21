@@ -11,12 +11,11 @@
     <main>
 
         <div id="album">
-            <img src={{.Album.CoverUrl}} alt="Album cover">
+            <img class="cover" src={{.Album.CoverUrl}} alt="Album cover">
             <div id="album-infos">
                 <p>Track Name : {{.Album.Name}}</p>
                 <p>Release date : {{.Album.ReleaseDate}}</p>
                 <p>Artist : {{.Album.ArtistName}}</p>
-                <p>Album name : Maladresse (single)</p>
                 <a href="{{.Album.ExternalURLs.Spotify}}" class="spotify-btn" target="_blank">
                     Listen on Spotify
                 </a>

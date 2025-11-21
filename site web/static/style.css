@@ -5,7 +5,9 @@
     font-style: normal;
 }
 
-html, body, main {
+html,
+body,
+main {
     height: 100%;
     width: 100%;
     margin: 0;
@@ -74,4 +76,14 @@ p {
 
 .spotify-btn:active {
     transform: scale(0.95);
+}
+
+.cover {
+    width: 30%; 
+    height: auto;
+}
+
+.homepic {
+    width: 75%;
+    height: auto;
 }

@@ -55,7 +55,7 @@ func GetToken() {
 
 	json.Unmarshal(body, &decodeToken)
 
-	fmt.Println(decodeToken.Token)
+	//fmt.Println(decodeToken.Token)
 
 	structure.TOKEN = decodeToken.Token
 }
@@ -102,7 +102,7 @@ func GetArtistPictures() []string {
 		json.Unmarshal(body, &decodeData)
 
 		if len(decodeData.Images) > 1 {
-			pictures = append(pictures, decodeData.Images[1].Url)
+			pictures = append(pictures, decodeData.Images[0].Url)
 		}
 	}
 
@@ -144,15 +144,15 @@ func GetAlbums() structure.AlbumsInfos {
 
 	json.Unmarshal(body, &decodeData)
 	//Exemple
-	for i := range decodeData.Albums {
-		fmt.Println("Nom :", decodeData.Albums[i].Name)
-		fmt.Println("Release date :", decodeData.Albums[i].Releasedate)
-		fmt.Println("Total tracks :", decodeData.Albums[i].Totaltrack)
-	}
+	// for i := range decodeData.Albums {
+	// 	fmt.Println("Nom :", decodeData.Albums[i].Name)
+	// 	fmt.Println("Release date :", decodeData.Albums[i].Releasedate)
+	// 	fmt.Println("Total tracks :", decodeData.Albums[i].Totaltrack)
+	// }
 
 	for i := range decodeData.Albums {
 		if len(decodeData.Albums[i].Images) > 0 {
-			decodeData.Albums[i].ImageURL = decodeData.Albums[i].Images[1].Url
+			decodeData.Albums[i].ImageURL = decodeData.Albums[i].Images[0].Url
 		} else {
 			decodeData.Albums[i].ImageURL = "/static/img/damso.jpeg"
 		}
@@ -198,13 +198,13 @@ func GetLaylowTrack() structure.Laylow {
 	var decodeData structure.Laylow
 
 	json.Unmarshal(body, &decodeData)
-	fmt.Println("link : ", decodeData.Album.ExternalURLs.Spotify)
-	fmt.Println("name : ", decodeData.Album.Name)
-	fmt.Println("release date : ", decodeData.Album.ReleaseDate)
-	fmt.Println("artist name : ", decodeData.Album.Artists[0].Name)
-	fmt.Println("Album cover: ", decodeData.Album.Images)
+	// fmt.Println("link : ", decodeData.Album.ExternalURLs.Spotify)
+	// fmt.Println("name : ", decodeData.Album.Name)
+	// fmt.Println("release date : ", decodeData.Album.ReleaseDate)
+	// fmt.Println("artist name : ", decodeData.Album.Artists[0].Name)
+	// fmt.Println("Album cover: ", decodeData.Album.Images)
 
-	decodeData.Album.CoverUrl = decodeData.Album.Images[1].URL
+	decodeData.Album.CoverUrl = decodeData.Album.Images[0].URL
 	decodeData.Album.ArtistName = decodeData.Album.Artists[0].Name
 
 	return decodeData
