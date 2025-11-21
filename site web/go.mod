@@ -1,3 +1,3 @@
-module siteweb
+module TpSpotify
 
 go 1.25.0

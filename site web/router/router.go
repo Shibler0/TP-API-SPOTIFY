@@ -1,8 +1,8 @@
 package router
 
 import (
+	"TpSpotify/controller"
 	"net/http"
-	"siteweb/controller"
 )
 
 func New() *http.ServeMux {

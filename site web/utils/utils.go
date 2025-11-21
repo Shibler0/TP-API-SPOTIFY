@@ -1,13 +1,13 @@
 package utils
 
 import (
+	"TpSpotify/structure"
 	"encoding/json"
 	"fmt"
 	"html/template"
 	"io"
 	"net/http"
 	"net/url"
-	"siteweb/structure"
 	"strings"
 	"time"
 )

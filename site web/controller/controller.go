@@ -1,9 +1,9 @@
 package controller
 
 import (
+	"TpSpotify/structure"
+	"TpSpotify/utils"
 	"net/http"
-	"siteweb/structure"
-	"siteweb/utils"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
