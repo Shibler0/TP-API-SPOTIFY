@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Liste de musique de damso</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <main>
+
+        <div id = "album">
+            <img src= {{.Album.CoverUrl}} alt="Album cover">
+            <div id ="album-infos">
+                <p>Track Name : {{.Album.Name}}</p>
+                <p>Release date : {{.Album.ReleaseDate}}</p>
+                <p>Artist : {{index .Album.Artists 0}}</p>
+                <p>Album name : .RAW-Z</p>
+                <a href="listen on spotify">{{.Album.ExternalURLs.Spotify}}</a>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

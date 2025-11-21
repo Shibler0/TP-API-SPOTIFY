@@ -11,8 +11,18 @@
 
     <main>
         <div id="row">
-            <img src="{{.Damso}}" alt="Image de damso" />
-            <img src="{{.Jul}}" alt="Image de jul" />
+            <form action="/album/damso" method="POST">
+                <button type="submit" style="border: none; background: none; padding: 0;">
+                    <img src="{{.Damso}}" style="cursor:pointer;">
+                </button>
+            </form>
+
+            <form action="/track/laylow" method="POST">
+                <button type="submit" style="border: none; background: none; padding: 0;">
+                    <img src="{{.Jul}}" alt="Jul cover" />
+                </button>
+            </form>
+
         </div>
     </main>
 

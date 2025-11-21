@@ -60,43 +60,53 @@ func GetToken() {
 	structure.TOKEN = decodeToken.Token
 }
 
-func GetArtistPicture() string {
-	artistURL := "https://api.spotify.com/v1/artists/3IW7ScrzXmPvZhB27hmfgy"
+func GetArtistPictures() []string {
+	artists := []string{
+		"https://api.spotify.com/v1/artists/0LnhY2fzptb0QEs5Q5gM7S", // Laylow
+		"https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie", // Damso
+	}
 
 	httpClient := http.Client{
 		Timeout: time.Second * 2,
 	}
 
-	req, errReq := http.NewRequest(http.MethodGet, artistURL, nil)
-	if errReq != nil {
-		fmt.Println("une erreur est survenue :", errReq.Error())
+	pictures := []string{}
+
+	for _, artistURL := range artists {
+		req, err := http.NewRequest(http.MethodGet, artistURL, nil)
+		if err != nil {
+			fmt.Println("Erreur req :", err)
+			continue
+		}
+
+		req.Header.Add("User-Agent", "Ynov campus B1")
+		req.Header.Set("Authorization", "Bearer "+structure.TOKEN)
+
+		res, err := httpClient.Do(req)
+		if err != nil {
+			fmt.Println("Erreur resp :", err)
+			continue
+		}
+
+		if res.Body != nil {
+			defer res.Body.Close()
+		}
+
+		body, err := io.ReadAll(res.Body)
+		if err != nil {
+			fmt.Println("Erreur lecture body :", err)
+			continue
+		}
+
+		var decodeData structure.Format
+		json.Unmarshal(body, &decodeData)
+
+		if len(decodeData.Images) > 1 {
+			pictures = append(pictures, decodeData.Images[1].Url)
+		}
 	}
 
-	req.Header.Add("User-Agent", "Ynov campus B1")
-	req.Header.Set("Authorization", "Bearer "+structure.TOKEN)
-
-	res, errResp := httpClient.Do(req)
-
-	if errResp != nil {
-		fmt.Println("une erreur est survenue : ", errResp.Error())
-		return ""
-	}
-
-	if res.Body != nil {
-		defer res.Body.Close()
-	}
-
-	body, errBody := io.ReadAll(res.Body)
-
-	if errBody != nil {
-		fmt.Println("une erreur est survenue,", errBody.Error())
-	}
-
-	var decodeData structure.Format
-
-	json.Unmarshal(body, &decodeData)
-
-	return decodeData.Images[0].Url
+	return pictures
 }
 
 func GetAlbums() structure.AlbumsInfos {
@@ -147,6 +157,54 @@ func GetAlbums() structure.AlbumsInfos {
 			decodeData.Albums[i].ImageURL = "/static/img/damso.jpeg"
 		}
 	}
+
+	return decodeData
+}
+
+func GetLaylowTrack() structure.Laylow {
+
+	url := "https://api.spotify.com/v1/tracks/0nAHBAlzkyaQXUp7qTULqv"
+
+	httpClient := http.Client{
+		Timeout: time.Second * 2,
+	}
+
+	req, errReq := http.NewRequest(http.MethodGet, url, nil)
+	if errReq != nil {
+		fmt.Println("une erreur est survenue :", errReq.Error())
+	}
+
+	req.Header.Add("User-Agent", "Ynov campus B1")
+	req.Header.Set("Authorization", "Bearer "+structure.TOKEN)
+
+	res, errResp := httpClient.Do(req)
+
+	if errResp != nil {
+		fmt.Println("une erreur est survenue : ", errResp.Error())
+		return structure.Laylow{}
+	}
+
+	if res.Body != nil {
+		defer res.Body.Close()
+	}
+
+	body, errBody := io.ReadAll(res.Body)
+
+	if errBody != nil {
+		fmt.Println("une erreur est survenue,", errBody.Error())
+		return structure.Laylow{}
+	}
+
+	var decodeData structure.Laylow
+
+	json.Unmarshal(body, &decodeData)
+	fmt.Println("link : ", decodeData.Album.ExternalURLs.Spotify)
+	fmt.Println("name : ", decodeData.Album.Name)
+	fmt.Println("release date : ", decodeData.Album.ReleaseDate)
+	fmt.Println("artist name : ", decodeData.Album.ArtistName)
+	fmt.Println("Album cover: ", decodeData.Album.Images)
+
+	decodeData.Album.CoverUrl = decodeData.Album.Images[1].URL
 
 	return decodeData
 }

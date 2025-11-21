@@ -13,9 +13,11 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		utils.GetAlbums()
 	}
 
+	pictures := utils.GetArtistPictures()
+
 	data := structure.Home{
-		Damso: "../static/img/damso.jpeg",
-		Jul:   utils.GetArtistPicture(),
+		Damso: pictures[1],
+		Jul:   pictures[0],
 	}
 
 	utils.RenderTemplate(w, "home.html", data)
@@ -32,4 +34,18 @@ func Damso(w http.ResponseWriter, r *http.Request) {
 	}
 
 	utils.RenderTemplate(w, "damso.html", data)
+}
+
+func Laylow(w http.ResponseWriter, r *http.Request) {
+
+	utils.GetToken()
+
+	instance := utils.GetLaylowTrack()
+
+	data := structure.Laylow{
+		Album: instance.Album,
+	}
+
+	utils.RenderTemplate(w, "laylow.html", data)
+
 }
