@@ -10,14 +10,16 @@
 <body>
     <main>
 
-        <div id = "album">
-            <img src= {{.Album.CoverUrl}} alt="Album cover">
-            <div id ="album-infos">
+        <div id="album">
+            <img src={{.Album.CoverUrl}} alt="Album cover">
+            <div id="album-infos">
                 <p>Track Name : {{.Album.Name}}</p>
                 <p>Release date : {{.Album.ReleaseDate}}</p>
-                <p>Artist : {{index .Album.Artists 0}}</p>
+                <p>Artist : {{.Album.ArtistName}}</p>
                 <p>Album name : .RAW-Z</p>
-                <a href="listen on spotify">{{.Album.ExternalURLs.Spotify}}</a>
+                <a href="{{.Album.ExternalURLs.Spotify}}" class="spotify-btn" target="_blank">
+                    Listen on Spotify
+                </a>
             </div>
         </div>
 

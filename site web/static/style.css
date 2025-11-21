@@ -7,7 +7,14 @@
 
 html, body, main {
     height: 100%;
+    width: 100%;
     margin: 0;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+}
+
+#space {
+    width: 5%;
+    height: 1px;
 }
 
 #row {
@@ -37,6 +44,32 @@ html, body, main {
     align-items: flex-start;
 }
 
+p {
+    color: aliceblue;
+}
+
 #album-infos p {
     font-family: "Supreme", sans-serif;
+}
+
+.spotify-btn {
+    display: inline-block;
+    background-color: #1DB954;
+    color: white;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.spotify-btn:hover {
+    background-color: #1ed760;
+    transform: scale(1.05);
+}
+
+.spotify-btn:active {
+    transform: scale(0.95);
 }

@@ -201,10 +201,11 @@ func GetLaylowTrack() structure.Laylow {
 	fmt.Println("link : ", decodeData.Album.ExternalURLs.Spotify)
 	fmt.Println("name : ", decodeData.Album.Name)
 	fmt.Println("release date : ", decodeData.Album.ReleaseDate)
-	fmt.Println("artist name : ", decodeData.Album.ArtistName)
+	fmt.Println("artist name : ", decodeData.Album.Artists[0].Name)
 	fmt.Println("Album cover: ", decodeData.Album.Images)
 
 	decodeData.Album.CoverUrl = decodeData.Album.Images[1].URL
+	decodeData.Album.ArtistName = decodeData.Album.Artists[0].Name
 
 	return decodeData
 }
