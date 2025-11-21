@@ -152,7 +152,7 @@ func GetAlbums() structure.AlbumsInfos {
 
 	for i := range decodeData.Albums {
 		if len(decodeData.Albums[i].Images) > 0 {
-			decodeData.Albums[i].ImageURL = decodeData.Albums[i].Images[0].Url
+			decodeData.Albums[i].ImageURL = decodeData.Albums[i].Images[1].Url
 		} else {
 			decodeData.Albums[i].ImageURL = "/static/img/damso.jpeg"
 		}
