@@ -41,8 +41,41 @@
 		{
 			"name": "ACCESS TOKEN",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://accounts.spotify.com/api/token?grant_type=client_credentials&client_id=fd1e0a45f53640d6961f96714278c8d9&client_secret=25efd36f7192478c81d8087f7386ece2",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"api",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						},
+						{
+							"key": "client_id",
+							"value": "fd1e0a45f53640d6961f96714278c8d9"
+						},
+						{
+							"key": "client_secret",
+							"value": "25efd36f7192478c81d8087f7386ece2"
+						}
+					]
+				}
 			},
 			"response": []
 		},
