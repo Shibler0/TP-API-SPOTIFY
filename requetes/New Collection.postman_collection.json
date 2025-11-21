@@ -14,7 +14,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "BQD431hkWP8DaibYvlivX_9lrm_UXOb4Thv_heiNRNn6hjJS8CjDGKxHZp3jQisNral4TPU9SWMuqqm1W9aUychquvbiHlLL0la9ZygEZzKLC3-AWsDpor20zNsmC-pHwHm3zSJqt94",
+							"value": "BQCsx1P0LKhwu1-jVL1mIbXVdrA6pEQXyBeKlEUkmQ8TpGbr6apa-aOf_T14tjI3gLqD-MN2sOxi8kHcIPj4_WGUgH0xX3_13MhzJ9EE6vMBF663krJ6bwDS2KNELnnfeFYRi8tok7k",
 							"type": "string"
 						}
 					]
@@ -22,7 +22,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie",
+					"raw": "https://api.spotify.com/v1/search?q=Damso&type=artist&limit=3&offset=0",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -31,8 +31,25 @@
 					],
 					"path": [
 						"v1",
-						"artists",
-						"2UwqpfQtNuhBwviIC0f2ie"
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Damso"
+						},
+						{
+							"key": "type",
+							"value": "artist"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
 					]
 				}
 			},
